@@ -1,0 +1,27 @@
+# .pre-commit-config.yaml
+
+repos:
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: v17.0.6  # Use a version compatible with your system
+    hooks:
+      - id: clang-format
+        args: [-i]  # In-place formatting
+        files: \.(cpp|hpp|h|c)$  # Only format C/C++ files
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: check-merge-conflict
+
+  # Optional: grep for forbidden functions (custom script)
+  - repo: local
+    hooks:
+      - id: no-forbidden-functions
+        name: Check for forbidden C functions
+        entry: ./scripts/check_forbidden.sh
+        language: script
+        types: [file]
+        files: \.(cpp|hpp|c|h)$
