@@ -30,7 +30,7 @@ BreakConstructorInitializers: BeforeColon
 BreakInheritanceList: BeforeColon
 BreakBeforeBinaryOperators: None
 BreakBeforeTernaryOperators: true
-ColumnLimit: 80
+ColumnLimit: 120
 CompactNamespaces: false
 
 # Braces and Wrapping
