@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+
 #include "Contact.hpp"  // Assumes rigid-member Contact class
 #include "PhoneBook.hpp"
 
@@ -32,14 +33,20 @@ bool fill_contact_from_input(Contact& contact_to_fill) {
 int main() {
     std::cout << "Welcome to THE phonebook. Use one of the following -> "
                  "(ADD/SEARCH/EXIT)"
-              << std::endl;
+              << '\n';
     PhoneBook phonebook;
 
     while (true) {
         std::cout << "cmd: ";
         std::string cmd;
-        std::getline(std::cin, cmd);
-
+        if (!std::getline(std::cin, cmd)) {
+            if (std::cin.eof()) {
+                std::cout << "\n[Info] End of input detected. Exiting." << std::endl;
+            } else {
+                std::cerr << "[Error] Failed to read command." << std::endl;
+            }
+            break;  // Exit the loop on EOF or error
+        }
         if (cmd == "ADD") {
             Contact temp_contact;
             if (fill_contact_from_input(temp_contact)) {
@@ -48,7 +55,7 @@ int main() {
                 std::cout << "Failed to add contact (empty field entered)." << std::endl;
             }
         } else if (cmd == "SEARCH") {
-            phonebook.display_contacts();
+            phonebook.search();
         } else if (cmd == "EXIT") {
             return 0;
         } else {

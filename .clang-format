@@ -78,4 +78,4 @@ FixNamespaceComments: true
 KeepEmptyLinesAtTheStartOfBlocks: true
 MaxEmptyLinesToKeep: 1
 ReflowComments: false
-IncludeBlocks: Preserve
+IncludeBlocks: Regroup

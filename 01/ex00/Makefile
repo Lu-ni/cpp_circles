@@ -1,11 +1,14 @@
 CXX         ?= c++
-NAME        = phonebook
-CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -pedantic
+NAME        = zombies
+# Added -g for debug symbols, useful for Valgrind/GDB
+CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -pedantic -g
 CPPFLAGS    = -I.
-SRC         = main.cpp PhoneBook.cpp
+SRC         = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 BUILD_DIR   = build
 OBJ         = $(addprefix $(BUILD_DIR)/, $(SRC:.cpp=.o))
 DEPS        = $(OBJ:.o=.d)
+
+LEAK_CHECK_CMD = leaks -atExit -- ./$(NAME)
 
 all: $(NAME)
 
@@ -13,7 +16,7 @@ $(NAME): $(OBJ)
 	@echo "Linking $(NAME)..."
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-$(BUILD_DIR)/%.o: %.cpp $(BUILD_DIR)/.dir_stamp Makefile Contact.hpp PhoneBook.hpp
+$(BUILD_DIR)/%.o: %.cpp $(BUILD_DIR)/.dir_stamp Makefile Zombie.hpp
 	@echo "Compiling $< -> $@..."
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@ -MMD -MP -MF $(@:.o=.d)
 
@@ -33,6 +36,10 @@ fclean: clean
 
 re: fclean all
 
+dev: $(NAME)
+	@echo "Running $(NAME) with leak check..."
+	$(LEAK_CHECK_CMD)
+
 -include $(DEPS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re dev
