@@ -18,7 +18,7 @@ int main(void) {
     int const hord_size = 10;
     Zombie* zombs = NULL;
     zombs = zombieHorde(hord_size, "bob");
-    if (zombs == nullptr) {
+    if (zombs == NULL) {
         std::cout << "Failed to allocate zombie horde!" << std::endl;
         return 1;
     }

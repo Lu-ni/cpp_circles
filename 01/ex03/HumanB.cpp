@@ -15,10 +15,10 @@
 #include <cstddef>
 #include <iostream>
 
-HumanB::HumanB(std::string name) : name_(name), weapon_(nullptr) {}
+HumanB::HumanB(std::string name) : name_(name), weapon_(NULL) {}
 
 void HumanB::attack(void) {
-    if (HumanB::weapon_ == nullptr)
+    if (HumanB::weapon_ == NULL)
         std::cout << HumanB::name_ << " attacks with their their bare hand... Give him a weapon god damnit !"
                   << "\n";
     else {
