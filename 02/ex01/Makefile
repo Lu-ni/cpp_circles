@@ -34,10 +34,6 @@ fclean: clean
 
 re: fclean all
 
-dev: $(NAME)
-	@echo "Running $(NAME) with leak check..."
-	$(LEAK_CHECK_CMD)
-
 -include $(DEPS)
 
-.PHONY: all clean fclean re dev
+.PHONY: all clean fclean re
