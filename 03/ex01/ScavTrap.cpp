@@ -24,7 +24,6 @@ void ScavTrap::attack(const std::string& target) {
     }
 }
 
-// --- New guardGate() method ---
 void ScavTrap::guardGate() {
     if (this->hit_point_ > 0 && this->energy_point_ > 0) {
         std::cout << "ScavTrap " << this->name_ << " is now in Gate keeper mode. None shall pass!" << std::endl;
