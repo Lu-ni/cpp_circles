@@ -30,7 +30,7 @@ int main() {
     }
     {
         std::cout << "\n\n--- Testing the new FragTrap ---" << std::endl;
-        FragTrap fragtap("SV-Bouncer");
+        FragTrap fragtap("ST-Fragger");
 
         fragtap.attack("a particularly tough-looking door");
         fragtap.takeDamage(25);
