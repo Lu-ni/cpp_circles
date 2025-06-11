@@ -43,7 +43,7 @@ void ClapTrap::attack(const std::string& target) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
     this->hit_point_ -= amount;
-    this->hit_point_ = std::max(this->hit_point_, (unsigned int)0);
+    this->hit_point_ = std::max(this->hit_point_, 0);
     std::cout << "ClapTrap " << this->name_ << " took " << amount << " points of damage!\n";
 }
 
