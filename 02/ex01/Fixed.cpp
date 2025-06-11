@@ -41,28 +41,24 @@ Fixed::~Fixed() {
 }
 
 int Fixed::getRawBits(void) const {
-    std::cout << "getRawBits member function called"
-              << "\n";
     return this->raw_bits_;
 }
 
 void Fixed::setRawBits(int const raw) {
-    std::cout << "setRawBits member function called"
-              << "\n";
     this->raw_bits_ = raw;
 }
 
 Fixed::Fixed(int int_value) : raw_bits_(0) {
-    this->setRawBits(int_value << Fixed::N_FRACTIONAL_BITS);
-    std::cout << "Int constuctor"
+    std::cout << "Int constructor called"
               << "\n";
+    this->setRawBits(int_value << Fixed::N_FRACTIONAL_BITS);
 }
 
 Fixed::Fixed(float float_value) : raw_bits_(0) {
+    std::cout << "Float constructor called"
+              << "\n";
     int raw_value_to_set = roundf(float_value * (1 << Fixed::N_FRACTIONAL_BITS));
     this->setRawBits(raw_value_to_set);
-    std::cout << "floatt constuctor"
-              << "\n";
 }
 
 float Fixed::toFloat(void) const {
