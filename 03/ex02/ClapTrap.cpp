@@ -1,10 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lnicolli <lucas.nicollier@gmail.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/12 12:06:56 by lnicolli          #+#    #+#             */
+/*   Updated: 2025/06/12 13:55:36 by lnicolli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
-#include <algorithm>
 #include <iostream>
-#include <utility>
 
-ClapTrap::ClapTrap(std::string name) : name_(std::move(name)), hit_point_(10), attack_dmg_(0), energy_point_(10) {
+ClapTrap::ClapTrap(std::string name) : name_(name), hit_point_(10), attack_dmg_(0), energy_point_(10) {
     std::cout << "Constructor called\n";
 }
 
