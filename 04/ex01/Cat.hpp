@@ -5,10 +5,11 @@
 class Cat : public Animal {
    public:
     Cat();
+    Cat(const Cat& other);
+    Cat& operator=(const Cat& other);
     ~Cat();
     void makeSound(void) const;
     void printIdeas(void) const;
-    Cat& operator=(const Cat& other);
 
    private:
     Brain* brain;

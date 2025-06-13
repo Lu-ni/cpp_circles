@@ -18,7 +18,7 @@ Brain::Brain(const Brain& other) {
 }
 
 Brain& Brain::operator=(const Brain& other) {
-    std::cout << "OEWRIOWERIWEORIREW\n";
+    std::cout << "Assigning Brain\n";
     if (this != &other) {
         for (int i = 0; i < NUMBER_IDEAS; ++i) {
             this->ideas_[i] = other.ideas_[i];

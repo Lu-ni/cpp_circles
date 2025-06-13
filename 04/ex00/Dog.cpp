@@ -6,6 +6,19 @@ Dog::Dog() {
     std::cout << "CREATING A DOGGG\n";
     this->type = "Dog";
 }
+
+Dog::Dog(const Dog& other) : Animal(other) {
+    std::cout << "Copy-constructing Dog\n";
+}
+
+Dog& Dog::operator=(const Dog& other) {
+    std::cout << "Assigning Dog\n";
+    if (this != &other) {
+        Animal::operator=(other);
+    }
+    return *this;
+}
+
 Dog::~Dog() {
     std::cout << "DESTROYING A DOGGG\n";
 }

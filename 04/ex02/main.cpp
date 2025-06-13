@@ -22,8 +22,10 @@ int main(void) {
         const Cat* bob2 = new Cat();
         bob->printIdeas();
         bob2->printIdeas();
-        bob = bob2;
+        *const_cast<Cat*>(bob) = *bob2;
         bob->printIdeas();
+        delete bob;
+        delete bob2;
     }
     {
         const Animal* animals[100];

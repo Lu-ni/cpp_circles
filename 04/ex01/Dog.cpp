@@ -9,16 +9,22 @@ Dog::Dog() : brain(new Brain()) {
     this->type = "Dog";
 }
 
-Dog::~Dog() {
-    delete this->brain;
-    std::cout << "DESTROYING A DOGGG\n";
+Dog::Dog(const Dog& other) : Animal(other), brain(new Brain(*(other.brain))) {
+    std::cout << "Copy-constructing Dog\n";
 }
 
 Dog& Dog::operator=(const Dog& other) {
+    std::cout << "Assigning Dog\n";
     if (this != &other) {
+        Animal::operator=(other);
         *(this->brain) = *(other.brain);
     }
     return *this;
+}
+
+Dog::~Dog() {
+    delete this->brain;
+    std::cout << "DESTROYING A DOGGG\n";
 }
 void Dog::makeSound(void) const {
     std::cout << "  / \\__\n";

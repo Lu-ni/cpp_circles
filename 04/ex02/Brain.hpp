@@ -6,7 +6,7 @@ class Brain {
     Brain();
     Brain(const Brain& other);
     Brain& operator=(const Brain& other);
-    virtual ~Brain();
+    ~Brain();
     static const short int NUMBER_IDEAS = 100;
     void printIdeas(void) const;
     void copyBrain(void);
