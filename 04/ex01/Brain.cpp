@@ -13,12 +13,11 @@
 #include "Brain.hpp"
 
 #include <iostream>
-#include <string>
 
 Brain::Brain() {
     std::cout << "Constructing Brain\n";
     for (int i = 0; i < NUMBER_IDEAS; ++i) {
-        this->ideas_[i] = std::to_string(i) + " idea: " + std::to_string(std::rand());
+        this->ideas_[i] ="idea";
     }
 }
 
