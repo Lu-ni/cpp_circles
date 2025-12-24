@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lnicolli <lucas.nicollier@gmail.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/24 15:36:03 by lnicolli          #+#    #+#             */
+/*   Updated: 2025/12/24 15:36:03 by lnicolli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
 #include <exception>
@@ -32,7 +44,7 @@ class Form {
    private:
     const std::string name_;
     bool is_signed_;
-    int min_grade_to_sign_;
-    int min_grade_to_execute_;
+    const int min_grade_to_sign_;
+    const int min_grade_to_execute_;
 };
 std::ostream& operator<<(std::ostream& os, Form& form);

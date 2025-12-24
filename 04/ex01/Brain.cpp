@@ -6,7 +6,7 @@
 /*   By: lnicolli <lucas.nicollier@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 19:35:41 by lnicolli          #+#    #+#             */
-/*   Updated: 2025/06/13 19:35:41 by lnicolli         ###   ########.fr       */
+/*   Updated: 2025/12/24 15:35:52 by lnicolli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 Brain::Brain() {
     std::cout << "Constructing Brain\n";
     for (int i = 0; i < NUMBER_IDEAS; ++i) {
-        this->ideas_[i] ="idea";
+        this->ideas_[i] = "idea";
     }
 }
 

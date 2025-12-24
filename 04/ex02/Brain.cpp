@@ -6,15 +6,15 @@
 /*   By: lnicolli <lucas.nicollier@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 19:35:41 by lnicolli          #+#    #+#             */
-/*   Updated: 2025/06/13 19:35:41 by lnicolli         ###   ########.fr       */
+/*   Updated: 2025/12/24 15:35:57 by lnicolli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
+#include <cstdlib>
 #include <iostream>
 #include <string>
-#include <cstdlib>
 
 Brain::Brain() {
     std::cout << "Constructing Brain\n";

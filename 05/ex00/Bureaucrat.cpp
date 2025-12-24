@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lnicolli <lucas.nicollier@gmail.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/24 15:36:00 by lnicolli          #+#    #+#             */
+/*   Updated: 2025/12/24 15:36:00 by lnicolli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 #include <iostream>
@@ -17,6 +29,15 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name_(name) {
     }
     grade_ = grade;
     std::cout << this->name_ << " was created with grade " << this->grade_ << "\n";
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : name_(other.name_), grade_(other.grade_) {}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
+    if (this != &other) {
+        grade_ = other.grade_;
+    }
+    return *this;
 }
 
 Bureaucrat::~Bureaucrat() {}
