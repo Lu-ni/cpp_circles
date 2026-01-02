@@ -42,12 +42,13 @@ const char* Intern::FormNotFound::what() const throw() {
 }
 int getIndex(const std::string form) {
     std::string forms[] = {"presidential pardon", "robotomy request", "shrubbery creation"};
-    for (unsigned long i = 0; i < sizeof(forms); i++)
+    for (unsigned long i = 0; i < sizeof(forms) / sizeof(forms[0]); i++)
         if (forms[i] == form)
             return i;
     return -1;
 }
 AForm* Intern::makeForm(const std::string& form, const std::string& form_target) {
+    std::cout << "Intern creates " << form << std::endl;
     switch (getIndex(form)) {
         case 0:
             return new PresidentialPardonForm(form_target);

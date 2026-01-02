@@ -27,7 +27,7 @@ clean:
 	@echo "Cleaning object and dependency files..."
 	rm -f $(OBJ) $(DEPS)
 	@rm -f $(BUILD_DIR)/.dir_stamp
-	rm -r $(BUILD_DIR)
+	rm -rf $(BUILD_DIR)
 
 fclean: clean
 	@echo "Cleaning executable..."
