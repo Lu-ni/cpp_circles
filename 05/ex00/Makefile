@@ -1,7 +1,6 @@
 CXX         ?= c++
 NAME        = out
-# Added -g for debug symbols, useful for Valgrind/GDB
-CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -pedantic -g
+CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -pedantic
 CPPFLAGS    = -I.
 SRC         = main.cpp Bureaucrat.cpp
 BUILD_DIR   = build

@@ -23,6 +23,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
         AForm::operator=(other);
         target_ = other.target_;
     }
+    std::cout << std::endl;
     return *this;
 }
 

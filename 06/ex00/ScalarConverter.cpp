@@ -12,9 +12,20 @@
 
 #include "ScalarConverter.hpp"
 
-#include <ostream>
+#include <iostream>
 
 ScalarConverter::ScalarConverter() {}
+
+ScalarConverter::ScalarConverter(const ScalarConverter& other) {
+    (void)other;
+}
+
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) {
+    (void)other;
+    return *this;
+}
+
+ScalarConverter::~ScalarConverter() {}
 
 bool manageSpecial(const std::string& literal) {
     std::string specialTypes[6] = {"nan", "nanf", "+inf", "+inff", "-inf", "-inff"};
@@ -88,7 +99,6 @@ void ScalarConverter::convert(const std::string& literal) {
         }
 
         d = std::strtod(to_convert.c_str(), &endptr);
-        std::cout << "endchar:" << *endptr << "\n";
         if (*endptr != '\0' && !(*endptr == 'f' && *(endptr + 1) == '\0')) {
             std::cout << "char: impossible" << std::endl;
             std::cout << "int: impossible" << std::endl;
